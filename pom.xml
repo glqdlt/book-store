@@ -11,6 +11,7 @@
     <modules>
         <module>architecture</module>
         <module>qrreader</module>
+        <module>slack-message-bot</module>
     </modules>
 
 
