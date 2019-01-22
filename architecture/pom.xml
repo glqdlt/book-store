@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.glqdlt.bookstore</groupId>
+    <artifactId>architecure</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <parent>
+        <artifactId>book-store</artifactId>
+        <groupId>com.glqdlt</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>net.sourceforge.plantuml</groupId>
+            <artifactId>plantuml</artifactId>
+            <version>8059</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.jeluard</groupId>
+            <artifactId>plantuml-maven-plugin</artifactId>
+            <version>1.2</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.github.jeluard</groupId>
+                <artifactId>plantuml-maven-plugin</artifactId>
+                <version>1.2</version>
+                <configuration>
+                    <sourceFiles>
+                        <directory>${basedir}</directory>
+                        <includes>
+                            <include>src/main/uml/**/*.puml</include>
+                        </includes>
+                    </sourceFiles>
+                    <outputInSourceDirectory>
+                        true
+                    </outputInSourceDirectory>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>net.sourceforge.plantuml</groupId>
+                        <artifactId>plantuml</artifactId>
+                        <version>8059</version>
+                    </dependency>
+                </dependencies>
+
+            </plugin>
+        </plugins>
+    </build>
+    
+</project>

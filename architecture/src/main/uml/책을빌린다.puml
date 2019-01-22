@@ -1,0 +1,35 @@
+@startuml
+ actor 사용자
+ 사용자 -> 책 : 사용자가 책의 QR 코드를 스캔 (http://book.com/book/{book}/detail)
+ activate 사용자
+ activate 책
+ 책 -> 사용자 : http://book.com/book/{book}/detail 로 이동
+ deactivate 책
+ 사용자 -> WEB_APP : 웹 어플리케이션에 접근
+ activate WEB_APP
+ WEB_APP -> WEB_APP : 인증된 사용자인지 체크
+ WEB_APP -> 사용자 : http://book.com/login?refrer_url=http://book.com/book/{book}/detail \n 로그인 화면으로 전이
+ deactivate WEB_APP
+ 사용자 -> WEB_APP : 로그인 시도
+ activate WEB_APP
+ database DB
+ WEB_APP <-> DB : 회원정보 조회
+ activate DB
+ DEACTIVATE DB
+ WEB_APP -> 사용자 : 로그인 성공과함께 refrer_url 로 301 처리
+ deactivate WEB_APP
+ 사용자 -> WEB_APP : http://book.com/book/{book}/detail 로 이동
+ activate WEB_APP
+ WEB_APP -> 사용자 : 책 디테일 화면 제공
+ DEACTIVATE WEB_APP
+ 사용자 -> WEB_APP : 빌려 간 사람이 없다면 [책 빌리기] 를 수행
+ ACTIVATE WEB_APP
+ WEB_APP <-> DB : 책 빌린 정보를 확인 후, 책이 빌려진 상태를 저장
+ ACTIVATE DB
+ DEACTIVATE DB
+ WEB_APP -> 사용자 : 책을 성공적으로 빌렸음을 알림
+DEACTIVATE WEB_APP
+DEACTIVATE 사용자
+
+
+@enduml
