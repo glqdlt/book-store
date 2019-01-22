@@ -2,16 +2,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>book-store</artifactId>
+        <groupId>com.glqdlt</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.glqdlt</groupId>
-    <artifactId>book-store</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>architecture</module>
-        <module>qrreader</module>
-    </modules>
+    <groupId>com.glqdlt.bookstore</groupId>
+    <artifactId>qr-reader</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
 
+    <!--https://github.com/zxing/zxing-->
 
 </project>
