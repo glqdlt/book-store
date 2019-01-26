@@ -20,6 +20,11 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>com.glqdlt.bookstore</groupId>
+			<artifactId>persistence-api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.13</version>

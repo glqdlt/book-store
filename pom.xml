@@ -12,6 +12,7 @@
         <module>architecture</module>
         <module>qrreader</module>
         <module>slack-message-bot</module>
+        <module>entity</module>
     </modules>
 
 
